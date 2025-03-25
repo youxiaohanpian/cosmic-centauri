@@ -1,0 +1,22 @@
+---
+title: 构建和部署
+description: 构建
+sidebar:
+  order: 1    # 数字越小越靠前
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## 构建项目
+```bash
+# 开发时使用
+npm run dev    # 快速预览和修改
+
+# 测试搜索功能时使用
+npm run build  # 构建项目
+npm run preview  # 预览构建结果
+
+# 部署时使用
+npm run build  # 构建项目
+# 然后部署 dist 文件夹
+```

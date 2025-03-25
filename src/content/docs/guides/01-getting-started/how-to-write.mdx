@@ -19,3 +19,10 @@ src/content/docs/guides/
     └── 02-插件.md
 ```
 
+URL 路径中最好不要使用中文和空格，这可能会导致一些问题。建议使用英文或者连字符（-）来命名
+```
+actions:
+    - text: 阅读文档
+      link: /guides/01-getting-started/  ✅ 正确的URL路径
+```
+

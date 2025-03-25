@@ -6,29 +6,33 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: '我的文档',
 			social: {
 				github: 'https://github.com/youxiaohanpian',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
-					autogenerate: { directory: 'guides' }  // 改成自动生成 ✅ 需要使用小写的 'guides'
-					// items: [
-					// 	// 每个导航有一个入口 item here is one entry in the navigation menu.
-					// 	{ label: 'Example Guide', slug: 'guides/example' },
-					// 	{ label: 'Git 操作图解', link: '/guides/git-guide' },  
-					// ],
+					label: '文档',    // 添加一个顶层标签
+					items: [
+						{
+							label: '入门教程',  // 第一个大类
+							autogenerate: { 
+								directory: 'guides/01-getting-started' 
+							}
+						},
+						{
+							label: '开发指南',  // 第二个大类
+							autogenerate: { 
+								directory: 'guides/02-development'
+							}
+						}
+					]
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' }, // 改成自动生成
-				},
+					label: '参考',
+					autogenerate: { directory: 'reference' }
+				}
 			],
-			// tableOfContents: {
-			// 	minHeadingLevel: 2,    // 从二级标题开始显示
-			// 	maxHeadingLevel: 3     // 到三级标题结束
-			// }
 		}),
 	],
 });
