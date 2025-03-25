@@ -1,0 +1,59 @@
+---
+title: 03 文档编写
+description: 这里写文档的简要描述
+sidebar:
+  order: 3    # 数字越小越靠前
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+# 主标题
+
+## 第一部分
+正文内容
+
+## 使用卡片
+<CardGrid>
+    <Card title="第一张卡片" icon="pencil">
+        这里是卡片内容
+    </Card>
+    <Card title="第二张卡片" icon="add-document">
+        这里是卡片内容
+    </Card>
+</CardGrid>
+
+## 使用标签页
+<Tabs>
+    <TabItem label="第一个标签">
+        第一个标签的内容
+    </TabItem>
+    <TabItem label="第二个标签">
+        第二个标签的内容
+    </TabItem>
+</Tabs>
+## 如何插入代码块
+使用 \```bash 开始代码块
+每行前面使用正确的缩进
+使用 \``` 结束代码块
+这样代码块就会正确显示为目录树的格式，而不是堆在一起。要注意代码块前后都要有空行，这样可以确保 Markdown 正确解析。
+
+    这是一个代码块
+
+
+- [x] done
+- [ ] todo
+- [ ] todo
+
+## 更方便的编写 Markdown 文件
+#### 安装这些扩展
+- "Markdown Preview Enhanced" (实时预览)
+- "Markdown All in One" (编写辅助)
+- "MDX" (MDX 语法支持)
+#### 使用专门的 Markdown 编辑器
+- Typora（所见即所得的 Markdown 编辑器）
+- MarkText（免费开源的选择）
+#### 简单的解决方案，建议：
+- 先用 Typora 写内容（可视化编辑）
+- 写好后复制到项目文件中
+- 只需要加上 frontmatter 就可以了

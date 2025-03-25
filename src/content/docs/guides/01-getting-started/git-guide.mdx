@@ -1,6 +1,8 @@
 ---
-title: Git 操作图解
+title: 02 Git 操作图解
 description: 图文并茂的 Git 操作指南
+sidebar:
+  order: 2    # 数字越小越靠前
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
@@ -48,7 +50,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
     4. `git push` (上传到网上备份)
 </Card>
 
-### 2. 糟糕，我改错了，想回到之前的版本
+### 2. 完了，我改错了，回滚之前的版本
 <Card>
     1. `git log --oneline` (查看所有存档点)
     2. `git reset --hard 版本号` (回到指定的存档)
@@ -62,6 +64,9 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
     2. 在新分支上随便改
     3. 如果改砸了，直接删掉这个分支就好
     4. 如果改好了，可以合并回主分支
+    5. 在命令 `git checkout -b test-new-feature` 中：
+`git checkout -b` 是固定的命令格式（意思是"创建并切换到新分支"）
+`test-new-feature` 是分支名称（这个名字你可以自由更改）
     
     就像游戏开了个新存档来尝试不同的剧情！
 </Card>
@@ -89,9 +94,11 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
         └── docs/
             └── guides/
                 ├── en/                     # 英文指南目录
-                │   └── try.md             
+                    ├── git-guide.mdx
+                    └── development-guide.mdx         
                 └── zh/                     # 中文指南目录
                     ├── git-guide.mdx
                     └── development-guide.mdx
+            └── 参考/
     ```
 </Card> 
