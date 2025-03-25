@@ -1,0 +1,97 @@
+---
+title: Git 操作图解
+description: 图文并茂的 Git 操作指南
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+# Git 常用操作图解
+
+## 日常操作
+
+<CardGrid stagger>
+	<Card title="保存更改" icon="pencil">
+		1. `git add .` - 添加所有更改
+		2. `git commit -m "更新说明"` - 保存更改
+		3. `git push` - 上传到网上
+        
+        就像保存游戏进度一样！
+	</Card>
+
+	<Card title="打标签" icon="flag">
+		`git tag v1.0 -m "第一个版本"`
+
+        相当于给当前的代码加书签，方便以后找到这个版本！
+	</Card>
+
+	<Card title="版本回滚" icon="back-arrow">
+		`git reset --hard HEAD^`
+        
+        犯错了？没关系！就像游戏读取之前的存档一样！
+	</Card>
+
+	<Card title="分支操作" icon="random">
+		`git checkout -b test-feature`
+        
+        想尝试新功能但不确定？创建一个新分支来测试，就像游戏存档的平行宇宙！
+	</Card>
+</CardGrid>
+
+## 常见场景
+
+### 1. 我想保存当前进度
+<Card>
+    ![保存进度示意图]
+    1. 写完代码
+    2. `git add .` (收集所有改动)
+    3. `git commit -m "添加了xxx功能"` (保存进度)
+    4. `git push` (上传到网上备份)
+</Card>
+
+### 2. 糟糕，我改错了，想回到之前的版本
+<Card>
+    1. `git log --oneline` (查看所有存档点)
+    2. `git reset --hard 版本号` (回到指定的存档)
+    
+    就像游戏读取存档一样简单！
+</Card>
+
+### 3. 我想尝试一个新功能，但不确定是否可行
+<Card>
+    1. `git checkout -b test-new-feature` (创建新的测试分支)
+    2. 在新分支上随便改
+    3. 如果改砸了，直接删掉这个分支就好
+    4. 如果改好了，可以合并回主分支
+    
+    就像游戏开了个新存档来尝试不同的剧情！
+</Card>
+
+## 注意事项
+
+<CardGrid>
+	<Card title="常备操作" icon="open-book">
+		每天写代码前：`git pull` (下载最新代码)
+        
+        每天写完代码：`git push` (上传保存)
+	</Card>
+
+	<Card title="不确定就备份" icon="warning">
+		要改重要的代码前，先创建新分支
+        
+        `git checkout -b backup-当前日期`
+	</Card>
+</CardGrid> 
+<Card>
+    记住每个 .md 或 .mdx 文件都需要包含正确的 frontmatter：
+    ```bash
+    src/
+    └── content/
+        └── docs/
+            └── guides/
+                ├── en/                     # 英文指南目录
+                │   └── try.md             
+                └── zh/                     # 中文指南目录
+                    ├── git-guide.mdx
+                    └── development-guide.mdx
+    ```
+</Card> 
