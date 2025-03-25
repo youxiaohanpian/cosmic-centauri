@@ -4,10 +4,8 @@ description: 图文并茂的 Git 操作指南
 sidebar:
   order: 2    # 数字越小越靠前
 ---
-
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { Card, CardGrid } from '@astrojs/starlight/components';
-
-# Git 常用操作图解
 
 ## 日常操作
 
@@ -38,6 +36,60 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
         想尝试新功能但不确定？创建一个新分支来测试，就像游戏存档的平行宇宙！
 	</Card>
 </CardGrid>
+
+## Git 版本控制
+
+### 常用命令
+<Tabs>
+  <TabItem label="基础操作">
+  ```bash
+  # 添加修改
+  git add .
+  
+  # 提交修改
+  git commit -m "更新说明"
+  
+  # 推送到远程
+  git push
+  ```
+  </TabItem>
+  <TabItem label="分支操作">
+  ```bash
+  # 创建并切换到新分支
+  git checkout -b test-feature
+  
+  # 切换回主分支
+  git checkout main
+  
+  # 合并分支
+  git merge test-feature
+  ```
+  </TabItem>
+  <TabItem label="版本回滚">
+  ```bash
+  # 回滚到上一次提交
+  git reset --hard HEAD^
+  
+  # 回滚到指定版本
+  git reset --hard 版本号
+  
+  # 给重要的版本打标签
+  git tag v1.0 -m "第一个可用版本"
+  ```
+  </TabItem>
+  <TabItem label="标签管理">
+  ```bash
+  # 创建标签
+  git tag v1.0 -m "第一个可用版本"
+  
+  # 查看所有标签
+  git tag
+  
+  # 推送标签到远程
+  git push origin v1.0
+  ```
+  </TabItem>
+</Tabs>
 
 ## 常见场景
 
