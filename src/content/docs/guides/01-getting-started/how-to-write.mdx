@@ -4,7 +4,7 @@ description: 文档编写排序
 sidebar:
   order: 4    # 数字越小越靠前
 ---
-## 如何进行文档的排序
+## 如何安排文档的结构
 ```
 src/content/docs/guides/
 ├── 01-入门/
@@ -17,6 +17,19 @@ src/content/docs/guides/
 └── 03-进阶/
     ├── 01-自定义.md
     └── 02-插件.md
+```
+## 实际代码中
+无论是md还是mdx都要加上---内的内容，title和description是必须的
+如果是mdx，则支持一些结构导入，比如卡片化的设计
+```
+---
+title: 01 创建仓库
+description: 构建
+sidebar:
+  order: 1    # 数字越小越靠前
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 ```
 
 URL 路径中最好不要使用中文和空格，这可能会导致一些问题。建议使用英文或者连字符（-）来命名
