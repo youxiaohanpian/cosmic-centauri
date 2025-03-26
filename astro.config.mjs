@@ -8,7 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'My Docs',
 			social: {
-				github: 'https://github.com/youxiaohanpian/MyDocs'
+				github: 'https://github.com/youxiaohanpian/cosmic-centauri'
 			},
 			sidebar: [
 				{
