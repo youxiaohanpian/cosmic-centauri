@@ -1,5 +1,5 @@
 ---
-title: 构建和部署
+title: 01 创建仓库
 description: 构建
 sidebar:
   order: 1    # 数字越小越靠前
@@ -18,5 +18,55 @@ npm run preview  # 预览构建结果
 
 # 部署时使用
 npm run build  # 构建项目
+
 # 然后部署 dist 文件夹
+# 这会生成 dist/ 文件夹，里面包含：
+dist/
+├── assets/         # 静态资源（图片、CSS、JS等）
+├── guides/         # 你的文档页面
+└── index.html      # 主页
+```
+## 创建仓库
+```
+# 步骤：
+1. 去 GitHub.com
+2. 点击 "New repository"（新建仓库）
+3. 填写仓库名
+4. 创建仓库
+5. 复制仓库 URL
+```
+## 已经创建 GitHub 仓库
+修改：astro.config.mjs
+
+```
+export default defineConfig({
+    integrations: [
+        starlight({
+            title: 'My Docs',
+            social: {
+                github: 'https://github.com/你的用户名/你的仓库名'  // 替换这里
+            },
+            // ... 其他配置
+        })
+    ]
+});
+```
+## 或者直接链接到你的 GitHub 个人主页
+```
+social: {
+    github: 'https://github.com/你的用户名'  // 比如 https://github.com/johndoe
+}
+```
+
+注意事项：
+GitHub URL 不需要包含 .git 后缀
+这会在你的文档网站顶部添加一个 GitHub 图标链接
+用户点击后可以直接访问你的代码仓库
+如果你想让访问者能看到你的源代码：
+确保仓库是 public 的（已经是了）
+记得及时把本地的修改推送到 GitHub：
+```
+git add .
+git commit -m "更新文档"
+git push
 ```
