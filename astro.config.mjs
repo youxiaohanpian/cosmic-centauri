@@ -1,10 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import sitemap from '@astrojs/sitemap'; //添加网站地图
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://docs.ai233.top/', // 必须要有，否则 sitemap 不会生成
 	integrations: [
+		sitemap(),
 		starlight({
 			title: 'My Docs',
 			social: {
